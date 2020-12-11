@@ -1,0 +1,166 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "debug",
+			"command": "C:\\MinGW\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"${workspaceFolder}\\src\\*.cpp",
+				"-o",
+				"${workspaceFolder}\\build\\debug\\${fileBasenameNoExtension}.exe",
+				"-I",
+				"${workspaceFolder}\\include",
+				"-I",
+				"C:\\Program Files (x86)\\wxWidgets\\include\\wx-3.1",
+				"-I",
+				"C:\\Program Files (x86)\\wxWidgets\\lib\\wx\\include\\msw-unicode-3.1",
+				"-L",
+				"C:\\Program Files (x86)\\wxWidgets\\lib", 
+				"-l",
+				"wx_mswud_core-3.1.dll",
+				"-l",
+				"wx_baseud-3.1.dll",
+				"-mwindows",
+				
+
+
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "shell",
+			"label": "release",
+			"command": "C:\\MinGW\\bin\\g++.exe",
+			"args": [
+				"${workspaceFolder}\\src\\*.cpp",
+				"-o",
+				"${workspaceFolder}\\build\\release\\${fileBasenameNoExtension}.exe",
+				"-I",
+				"${workspaceFolder}\\include",
+				"-I",
+				"C:\\Program Files (x86)\\wxWidgets\\include\\wx-3.1",
+				"-I",
+				"C:\\Program Files (x86)\\wxWidgets\\lib\\wx\\include\\msw-unicode-3.1",
+				"-L",
+				"C:\\Program Files (x86)\\wxWidgets\\lib",
+				"-l",
+				"wx_mswu_core-3.1.dll",
+				"-l",
+				"wx_baseu-3.1.dll",
+				"-mwindows",
+
+
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "shell",
+			"label": "static",
+			"command": "C:\\MinGW\\bin\\g++.exe",
+			"args": [
+				"${workspaceFolder}\\src\\*.cpp",
+				"-o",
+				"${workspaceFolder}\\build\\static\\${fileBasenameNoExtension}.exe",
+				"-I",
+				"${workspaceFolder}\\include",
+				"-I",
+				"C:\\wxWidgets-3.1.4\\include",
+				//"C:\\Program Files (x86)\\wxWidgets\\include\\wx-3.1",
+				"-I",
+				"C:\\wxWidgets-3.1.4\\build-static\\lib\\wx\\include\\msw-unicode-static-3.1",
+				//"C:\\Program Files (x86)\\wxWidgets\\lib\\wx\\include\\msw-unicode-static-3.1",
+				"-L",
+				"C:\\wxWidgets-3.1.4\\build-static\\lib",
+				//"C:\\Program Files (x86)\\wxWidgets\\lib",
+				"-l",
+				"wx_baseu-3.1",
+				//"wx_mswu_core-3.1",
+				"-l",
+				"wx_mswu_core-3.1",
+				"-uxtheme",
+				"-oleacc",
+				
+				// "-l",
+				// "wxexpat-3.1",
+				// "-l",
+				// "wxjpeg-3.1",
+				// "-l",
+				// "wxpng-3.1",
+				// "-l",
+				// "wxregexu-3.1",
+				// "-l",
+				// "wxscintilla-3.1",
+				// "-l",
+				// "wxtiff-3.1",
+				// "-l",
+				// "wxzlib-3.1",
+				// "-l",
+				// "wx_mswu_html-3.1",
+				// "-l",
+				// "wx_mswu_media-3.1",
+				// "-l",
+				// "wx_mswu_propgrid-3.1",
+				// "-l",
+				// "wx_mswu_qa-3.1",
+				// "-l",
+				// "wx_mswu_ribbon-3.1",
+				// "-l",
+				// "wx_mswu_richtext-3.1",
+				// "-l",
+				// "wx_mswu_stc-3.1",
+				// "-l",
+				// "wx_mswu_webview-3.1",
+				// "-l",
+				// "wx_mswu_xrc-3.1",
+				// "-l",
+				// "wxexpat-3.1",
+				// "-l",
+				// "wxjpeg-3.1",
+				// "-l",
+				// "wxpng-3.1",
+				// "-l",
+				// "wxregexu-3.1",
+				// "-l",
+				// "wxscintilla-3.1",
+				// "-l",
+				// "wxtiff-3.1",
+				// "-l",
+				// "wxzlib-3.1",
+				//"wx_baseu-3.1",
+				"-mwindows",
+
+
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
