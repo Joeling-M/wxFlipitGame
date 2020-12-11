@@ -18,8 +18,13 @@ int currLevel = 0;
 
 bool game::OnInit() {
     
+    //Create window
     window = new mainWindow();
+
+    //Load level data into levels object
     initLevels(levels);
+
+    //Load the first level
     loadLevelClicks(levels[0]);
     
     window->Show(); 
@@ -27,16 +32,20 @@ bool game::OnInit() {
     return true;
 }
 
-
-//Flip button color in a "+" shape when clicked.
+//Handel event of a button being clicked
 void gridButClicked(wxCommandEvent &flipBtn){
+
+    //get clicked button ID
     int currButID = (flipBtn.GetId());
+    //flip buttons in a "+" shape
     flipButtons(currButID);
+    //check if the level has been completed with this click
     checkLevelComplete();
 
     flipBtn.Skip();
 }
 
+//Flip button colors of given button ID in "+" shape
 void flipButtons(int currButID) {
 
     //Center Button
@@ -84,6 +93,7 @@ void flipButtons(int currButID) {
     };
 }
 
+//Simulate button clicks in given locations to set up level
 void loadLevelClicks(level currLevel){
 
     for (int i=0; i<currLevel.clickArrSize; i++){
@@ -91,15 +101,20 @@ void loadLevelClicks(level currLevel){
     }
 }
 
+//Check if level is complete and progress to next level if so.
 void checkLevelComplete(){
+
+    //Flag to check if all buttons are blue
     boolean winFlag = true;
-    //string lvlLable = "";
+
+    //Loop through all buttons and check color
     for (int i=0; i<(625); i++){
         if (window->wxButBoard[i]->GetBackgroundColour() == *wxRED){
             winFlag = false;
         }
     }
 
+    //Change level
     if (winFlag){
         currLevel++;
         if (levels[currLevel].validLevel){

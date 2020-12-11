@@ -15,9 +15,11 @@
 
         
         public: 
-            //Objects within the window
+            //Container object
             wxPanel *wxPan = nullptr;
+            //Array of buttons for the grid
             wxButton *wxButBoard[25*25];
+            //Label for instructions
             wxStaticText *wxInfo = nullptr;
     };
 
