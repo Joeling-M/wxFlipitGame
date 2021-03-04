@@ -6,10 +6,13 @@
 #include <wxFIG_View.h>
 #include <wxFIG_Controller.h>
 
-mainWindow::mainWindow()  : wxFrame(NULL, wxID_ANY, "Test window", wxPoint(0, 0), wxSize(700, 800)){
+mainWindow::mainWindow()  : wxFrame(NULL, wxID_ANY, "Flip It Game", wxPoint(0, 0), wxSize(700, 800)){
 
+    this->SetBackgroundColour(*wxBLACK);
+    this->SetForegroundColour(*wxWHITE);
+    this->SetMinSize(wxSize(700, 600));
+    
     //Container for the window
-    //wxPan = new wxPanel(this, wxID_ANY, wxPoint(0, 0));
     wxColCont = new wxBoxSizer(wxVERTICAL);
     this->SetSizer(wxColCont);
     
@@ -28,6 +31,7 @@ mainWindow::mainWindow()  : wxFrame(NULL, wxID_ANY, "Test window", wxPoint(0, 0)
             //Create button at location
             wxButBoard[y*25 + x] = new wxButton(this, (y*25 + x), "", wxPoint(x*25, 100+(y*25)), wxSize(25, 25));
             wxButBoard[y*25 + x]->SetBackgroundColour(*wxBLUE);
+            
             //Bind listener to button
             wxButBoard[y*25 + x]->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &gridButClicked, y*25 + x);
 
