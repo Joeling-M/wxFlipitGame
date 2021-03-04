@@ -7,7 +7,7 @@
         #include <wx/wx.h>
     #endif
 
-    //Event handler for a button being clicked
+    //Event hadeler for a button being clicked
     void gridButClicked(wxCommandEvent &flipBtn);
     //Flip the button of the passed ID and its adjacent buttons
     void flipButtons(int currButID);
